@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{4678AA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WritingNumbers", "WritingNumbers\WritingNumbers.csproj", "{A01154F9-699B-4009-8E50-19701E2BE546}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SummingNumbers1", "SummingNumbers\SummingNumbers1.csproj", "{45FC8586-3329-42AB-9EE1-4D56397FE816}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SummingNumbers", "SummingNumbers\SummingNumbers.csproj", "{45FC8586-3329-42AB-9EE1-4D56397FE816}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
