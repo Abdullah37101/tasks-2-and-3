@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SummingNumbers", "WelcomeToCSharp\SummingNumbers.csproj", "{BA98DE46-A3F4-43C3-9C07-9FB1C8799FCD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{5B54FFD0-876A-40F7-938E-B5004E305589}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{23C8FF5D-BF23-4527-9267-6A84F801F6D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{4678AA26-2D1B-42B5-9BA8-7892A0DB129F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WritingNumbers", "WritingNumbers\WritingNumbers.csproj", "{A01154F9-699B-4009-8E50-19701E2BE546}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA98DE46-A3F4-43C3-9C07-9FB1C8799FCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA98DE46-A3F4-43C3-9C07-9FB1C8799FCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA98DE46-A3F4-43C3-9C07-9FB1C8799FCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA98DE46-A3F4-43C3-9C07-9FB1C8799FCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A01154F9-699B-4009-8E50-19701E2BE546}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A01154F9-699B-4009-8E50-19701E2BE546}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A01154F9-699B-4009-8E50-19701E2BE546}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A01154F9-699B-4009-8E50-19701E2BE546}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BA98DE46-A3F4-43C3-9C07-9FB1C8799FCD} = {5B54FFD0-876A-40F7-938E-B5004E305589}
+		{A01154F9-699B-4009-8E50-19701E2BE546} = {5B54FFD0-876A-40F7-938E-B5004E305589}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1934430E-E617-4B9D-942A-EAD0FABBD057}
+	EndGlobalSection
+EndGlobal
