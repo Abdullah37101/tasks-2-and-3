@@ -9,9 +9,9 @@ checked
 {
     try
     {
-        (TimeSpan loopApproachTime, int loopSum) = AddNumbers.AddNumbersUsingLoop(lowerBound, upperBound);
+        var (loopApproachTime, loopSum) = AddNumbers.AddNumbersUsingLoop(lowerBound, upperBound);
 
-        (TimeSpan seriesApproachTime, int seriesSum) = AddNumbers.AddNumbersUsingSeries(lowerBound, upperBound);
+        var (seriesApproachTime, seriesSum) = AddNumbers.AddNumbersUsingSeries(lowerBound, upperBound);
 
         Console.WriteLine($"The sum of numbers from {lowerBound} to {upperBound} = {loopSum} (using loop form)\nElapsed Seconds = {loopApproachTime.TotalSeconds}");
 
@@ -23,7 +23,7 @@ checked
     } 
 }
 
-static bool ConfirmSum(int lowerBound, int upperBound)
+bool ConfirmSum(int lowerBound, int upperBound)
 {
     while (true)
     {
@@ -40,7 +40,7 @@ static bool ConfirmSum(int lowerBound, int upperBound)
     }
 }
 
-static int GetUpperBound(int lowerBound)
+int GetUpperBound(int lowerBound)
 {
     while (true)
     {

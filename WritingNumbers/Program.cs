@@ -1,7 +1,6 @@
 ﻿const int lowerBound = 1;
-int upperBound;
 
-upperBound = GetUpperBound(lowerBound);
+var upperBound = GetUpperBound(lowerBound);
 
 //(TimeSpan oldApproachTime, string oldApproachResult) = WriteNumbers.WriteNumbersUsingOldApproach(lowerBound, maximumNumber);
 
@@ -9,13 +8,13 @@ upperBound = GetUpperBound(lowerBound);
 //Console.WriteLine($"Old approach, Elapsed Seconds = {oldApproachTime.TotalSeconds}");
 
 
-(TimeSpan newApproachTime, string newApproachResult) = WriteNumbers.WriteNumbersUsingNewApproach(lowerBound, upperBound.Value);
+var (newApproachTime, newApproachResult) = WriteNumbers.WriteNumbersUsingNewApproach(lowerBound, upperBound.Value);
 
 Console.WriteLine(newApproachResult);
 Console.WriteLine($"New approach, Elapsed Seconds = {newApproachTime.TotalSeconds}");
 
 
-static int GetUpperBound(int lowerBound)
+int GetUpperBound(int lowerBound)
 {
     while (true)
     {
