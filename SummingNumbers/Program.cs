@@ -1,55 +1,56 @@
 ﻿const int lowerBound = 1;
-int upperBound;
-string? userInput;
 
-while (true)
-{
-    Console.Write("Hello, Please enter the upper bound of the sum: ");
+var upperBound = GetUpperBound(lowerBound);
 
-    userInput = Console.ReadLine()?.Trim();
-
-    if (!int.TryParse(userInput, out upperBound) || upperBound < lowerBound)
-        Console.WriteLine("Invalid upper bound");
-    else
-        break;
-}
-
-while (true)
-{
-    Console.Write($"Are you sure you want to get the sum of numbers from {lowerBound} through {upperBound}? [y/n] ");
-
-    userInput = Console.ReadLine()?.Trim().ToLower();
-
-    if (userInput == "n")
-        return;
-
-    if (userInput != "y")
-        Console.WriteLine("Invalid input");
-    else
-        break;
-}
+if (!ConfirmSum(lowerBound, upperBound))
+    return;
 
 checked
 {
     try
     {
-        // O(1)
-        int numberOfTerms = upperBound - lowerBound + 1;
-        int seriesSum = numberOfTerms * (upperBound + lowerBound) / 2;
+        (TimeSpan loopApproachTime, int loopSum) = AddNumbers.AddNumbersUsingLoop(lowerBound, upperBound);
 
-        // O(n)
-        int loopSum = 0;
+        (TimeSpan seriesApproachTime, int seriesSum) = AddNumbers.AddNumbersUsingSeries(lowerBound, upperBound);
 
-        for (int i = lowerBound; i <= upperBound; ++i)
-            loopSum += i;
+        Console.WriteLine($"The sum of numbers from {lowerBound} to {upperBound} = {loopSum} (using loop form)\nElapsed Seconds = {loopApproachTime.TotalSeconds}");
 
-
-        Console.WriteLine($"The sum of numbers from {lowerBound} through {upperBound} = {seriesSum} (using series form)");
-
-        Console.WriteLine($"The sum of numbers from {lowerBound} to {upperBound} = {loopSum} (using loop form)");
+        Console.WriteLine($"The sum of numbers from {lowerBound} through {upperBound} = {seriesSum} (using series form)\nElapsed Seconds = {seriesApproachTime.TotalSeconds}");
     }
     catch (OverflowException)
     {
         Console.Error.WriteLine("The sum exceeds the maximum value for an integer.");
     } 
+}
+
+static bool ConfirmSum(int lowerBound, int upperBound)
+{
+    while (true)
+    {
+        Console.Write($"Are you sure you want to get the sum of numbers from {lowerBound} through {upperBound}? [y/n] ");
+        var input = Console.ReadLine()?.Trim().ToLower();
+
+        if (input == "n")
+            return false;
+
+        if (input == "y")
+            return true;
+
+        Console.WriteLine("Invalid input");
+    }
+}
+
+static int GetUpperBound(int lowerBound)
+{
+    while (true)
+    {
+        Console.Write("Hello, Please enter the upper bound of the sum: ");
+
+        var userInput = Console.ReadLine()?.Trim();
+
+        if (!int.TryParse(userInput, out int upperBound) || upperBound < lowerBound)
+            Console.WriteLine("Invalid upper bound");
+        
+        return upperBound;
+    }
 }

@@ -1,19 +1,7 @@
 ﻿const int lowerBound = 1;
 int upperBound;
-string? userInput;
 
-while (true)
-{
-    Console.Write("Hello, Please enter the maximum number you want to write through: ");
-
-    userInput = Console.ReadLine()?.Trim();
-
-    if (!int.TryParse(userInput, out upperBound) || upperBound < lowerBound)
-        Console.WriteLine("Invalid upper bound");
-    else
-        break;
-}
-
+upperBound = GetUpperBound(lowerBound);
 
 //(TimeSpan oldApproachTime, string oldApproachResult) = WriteNumbers.WriteNumbersUsingOldApproach(lowerBound, maximumNumber);
 
@@ -21,7 +9,23 @@ while (true)
 //Console.WriteLine($"Old approach, Elapsed Seconds = {oldApproachTime.TotalSeconds}");
 
 
-(TimeSpan newApproachTime, string newApproachResult) = WriteNumbers.WriteNumbersUsingNewApproach(lowerBound, upperBound);
+(TimeSpan newApproachTime, string newApproachResult) = WriteNumbers.WriteNumbersUsingNewApproach(lowerBound, upperBound.Value);
 
 Console.WriteLine(newApproachResult);
 Console.WriteLine($"New approach, Elapsed Seconds = {newApproachTime.TotalSeconds}");
+
+
+static int GetUpperBound(int lowerBound)
+{
+    while (true)
+    {
+        Console.Write("Hello, Please enter the upper bound you want to write through: ");
+
+        var input = Console.ReadLine()?.Trim();
+
+        if (int.TryParse(input, out int upperBound) && upperBound >= lowerBound)
+            return upperBound;
+
+        Console.WriteLine("Invalid upper bound");
+    }
+}
