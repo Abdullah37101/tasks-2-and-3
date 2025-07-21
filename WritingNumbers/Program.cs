@@ -8,7 +8,7 @@ var upperBound = GetUpperBound(lowerBound);
 //Console.WriteLine($"Old approach, Elapsed Seconds = {oldApproachTime.TotalSeconds}");
 
 
-var (newApproachTime, newApproachResult) = WriteNumbers.WriteNumbersUsingNewApproach(lowerBound, upperBound.Value);
+var (newApproachTime, newApproachResult) = WriteNumbers.WriteNumbersUsingNewApproach(lowerBound, upperBound);
 
 Console.WriteLine(newApproachResult);
 Console.WriteLine($"New approach, Elapsed Seconds = {newApproachTime.TotalSeconds}");
