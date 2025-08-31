@@ -1,4 +1,6 @@
-﻿const int lowerBound = 1;
+﻿using System.Diagnostics;
+
+const int lowerBound = 1;
 
 var upperBound = GetUpperBound(lowerBound);
 
@@ -9,9 +11,19 @@ checked
 {
     try
     {
-        var (loopApproachTime, loopSum) = AddNumbers.AddNumbersUsingLoop(lowerBound, upperBound);
+        Stopwatch stopwatch = Stopwatch.StartNew();
 
-        var (seriesApproachTime, seriesSum) = AddNumbers.AddNumbersUsingSeries(lowerBound, upperBound);
+        var loopSum = AddNumbers.AddNumbersUsingLoop(lowerBound, upperBound);
+
+        var loopApproachTime = stopwatch.Elapsed;
+
+        stopwatch.Restart();
+
+        var seriesSum = AddNumbers.AddNumbersUsingSeries(lowerBound, upperBound);
+
+        var seriesApproachTime = stopwatch.Elapsed;
+
+        stopwatch.Stop();
 
         Console.WriteLine($"The sum of numbers from {lowerBound} to {upperBound} = {loopSum} (using loop form)\nElapsed Seconds = {loopApproachTime.TotalSeconds}");
 

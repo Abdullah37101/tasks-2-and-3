@@ -1,17 +1,24 @@
-﻿const int lowerBound = 1;
+﻿using System.Diagnostics;
+
+const int lowerBound = 1;
 
 var upperBound = GetUpperBound(lowerBound);
 
-//(TimeSpan oldApproachTime, string oldApproachResult) = WriteNumbers.WriteNumbersUsingOldApproach(lowerBound, maximumNumber);
+Stopwatch stopwatch = Stopwatch.StartNew();
 
-//Console.WriteLine(oldApproachResult);
-//Console.WriteLine($"Old approach, Elapsed Seconds = {oldApproachTime.TotalSeconds}");
+var oldApproachResult = WriteNumbers.WriteNumbersUsingOldApproach(lowerBound, upperBound);
 
+Console.WriteLine(oldApproachResult);
+Console.WriteLine($"Old approach, Elapsed Seconds = {stopwatch.Elapsed.TotalSeconds}");
 
-var (newApproachTime, newApproachResult) = WriteNumbers.WriteNumbersUsingNewApproach(lowerBound, upperBound);
+stopwatch.Restart();
+
+var newApproachResult = WriteNumbers.WriteNumbersUsingNewApproach(lowerBound, upperBound);
+
+stopwatch.Stop();
 
 Console.WriteLine(newApproachResult);
-Console.WriteLine($"New approach, Elapsed Seconds = {newApproachTime.TotalSeconds}");
+Console.WriteLine($"New approach, Elapsed Seconds = {stopwatch.Elapsed.TotalSeconds}");
 
 
 int GetUpperBound(int lowerBound)
